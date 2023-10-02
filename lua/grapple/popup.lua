@@ -120,7 +120,7 @@ function popup.keymap(popup_menu, popup_keymaps)
     for _, keymap in ipairs(popup_keymaps) do
         vim.keymap.set(keymap.mode, keymap.key, function()
             keymap.action(popup_menu)
-        end, { buffer = popup_menu.popup.buffer })
+        end, { buffer = popup_menu.popup.buffer, silent = true })
     end
 end
 
